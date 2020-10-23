@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dandelion Business Clinic</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Google Fonts -->
+  <!-- <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet"> -->
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body ng-app="dateDiff">
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-9 d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Dandelion Business Clinic"
+              class="img-fluid"></a>
+          <h1 class="logo"><a href="index.html">Dandelion</a></h1>
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active"><a href="index.html">Inicio</a></li>`
+              <li class="drop-down"><a href="">Nosotros</a>
+                <ul>
+                  <li><a href="about.html">¿Quienes Somos?</a></li>
+                  <li><a href="history.html">Historia </a></li>
+                </ul>
+              </li>
+              <li class="drop-down"><a href="">Servicios</a>
+                <ul>
+                  <li><a href="company.html">Empresas</a></li>
+                  <li><a href="person.html">Personas Naturales </a></li>
+                  <li><a href="plataformaMoed.html">Plataforma Moed </a></li>
+                </ul>
+              </li>
+              <li><a href="/">Clientes</a></li>
+              <li class="drop-down"><a href="">Empleos</a>
+                <ul>
+                  <li><a href="jobs.html">Cochabamba</a></li>
+                  <li><a href="jobs.html">La Paz  </a></li>
+                  <li><a href="jobs.html">Santa Cruz  </a></li>
+                </ul>
+              </li>
+              <!-- <li><a href="contact.html">Contáctanos</a></li> -->
+              <li><a href="date.html">Finiquito Express</a></li>
+
+              <!-- <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Buscar"
+                  aria-label="Search">
+              </form> -->
+            </ul>
+          </nav><!-- .nav-menu -->
+          <a href="contact.html" class="get-started-btn scrollto">Contáctanos</a>
+        </div>
+      </div>
+    </div>
+  </header><!-- End Header -->
+  <main id="main">
+    <!-- ======= Contact Section ======= -->
+    <section style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/9.jpg');
+    background-size: cover;
+    padding: 120px 0; color: white;">
+      <!-- <div class="container" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/img/cta-bg.jpg') fixed center center;
+      background-size: cover;
+      padding: 120px 0;" > -->
+      <div class="container">
+
+        <strong>
+          <h1>Finiquito Express</h1>
+        </strong>
+
+        <p>Para verificar su Finiquito primero ingrese la fecha de Inicio y Fin de su trabajo, luego haga Click para
+          verificar. </p>
+
+      </div>
+      <div class="container" ng-controller="index as vm">
+        <div class="col-lg-12 mt-5 mt-lg-0">
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Fecha de Inicio y Fin "
+              data-content="Ingrese las fechas cuando empezó y cuando terminó su relación laboral en su empresa "
+              class="col-1 " style="color:white"><strong>?</strong></button>
+            <label for="example-date-input" class="col-2 col-form-label">Fecha Inicio y Fin :</label>
+            <div class="col-3">
+              <input title="Aqui debe ingresar la fecha Inicio de Trabajo" class="form-control" type="date"
+                ng-model="vm.startDate" placeholder="Your month" id="datepicker" />
+            </div>
+            <div class="col-3">
+              <input title=" Aqui debe ingresar la fecha de fin de trabajo" id="fechaF" class="form-control" type="date"
+                ng-model="vm.endDate" value="01-01-2020" placeholder="Your month" />
+            </div>
+            <div class="col-3">
+              <button title="Haga Click para verificar el tiempo trabajado" class="btn btn-primary bg-dark btn-block"
+                ng-click="vm.getDiff()">Verifica</button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label"> </label>
+            <label title="Años trabajados en la empresa" for="example-text-input" class="col-1 col-form-label">
+              Años</label>
+            <label title="Meses trabajados en la empresa" for="example-text-input" class="col-1 col-form-label">
+              Meses</label>
+            <label title="Dias trabajados en la empresa" for="example-text-input" class="col-1 col-form-label">
+              Días</label>
+          </div>
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Total Tiempo Trabajado"
+              data-content="Las casillas muestran el tiempo total trabajado en Años , Meses y días respectivamente"
+              class="col-1 " style="color:white"><strong>?</strong></button>
+            <label for="example-text-input" class="col-2 col-form-label"> Tiempo trabajado :</label>
+            <div class="col-1">
+              <input title="Años trabajados en su empresa" class="anioF form-control" onkeyup="" placeholder=""
+                value="{{vm.result.years}}" type="text" disabled>
+            </div>
+            <div class="col-1">
+              <input title="Meses trabajados en su empresa" class="mesF form-control" onkeyup="" placeholder=""
+                value="{{vm.result.months}}" type="text" disabled>
+            </div>
+            <div class="col-1">
+              <input title="Días trabajados en su empresa" class="dayF form-control" onkeyup="" placeholder=""
+                value="{{vm.result.days}}" type="text" disabled>
+            </div>
+            <label for="example-date-input" class="col-4 col-form-label">Días de vacación que le corresponde : </label>
+            <label title="Segun fechas este es el tiempo de vacación que corresponde" for="example-date-input"
+              class="col-1 col-form-label" id="dVaca"></label>
+            <label for="example-date-input" class="col-1 col-form-label">(Días) </label>
+            <!-- <span class="col-4 col-form-label"></span> <span
+              id=""></span>Días -->
+          </div>
+
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Tres últimos salarios"
+              data-content="Aqui debe ingresar sus 3 últimos salarios (Haber Básico)" class="col-1 "
+              style="color:white"><strong>?</strong></button>
+            <label for="example-text-input" class="col-2 col-form-label">Últimos salarios :</label>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 últimos salarios" class="monto form-control" onkeyup="sumar();"
+                placeholder="Antepenúltimo Salario" type="text" value="" id="txt1">
+            </div>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 últimos salarios" class="monto form-control" onkeyup="sumar();"
+                placeholder="Penúltimo Salario" type="text" value="" id="txt2">
+            </div>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 últimos salarios" class="monto form-control" onkeyup="sumar();"
+                placeholder="Último Salario" type="text" value="" id="txt3">
+            </div>
+          </div>
+          <div class="form-group row">
+            <!-- <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Sueldo promedio"
+              data-content="And here's some amazing content. It's very engaging. Right?" class="col-1 "
+              style="color:white"></button> -->
+            <label for="example-text-input" class="col-3 col-form-label">Sueldo Promedio :</label>
+            <div class="col-2">
+              <input id="spTotal" class="form-control" type="text" placeholder="Promedio Sueldos" disabled>
+            </div>
+            <label for="example-text-input" class="col-2 col-form-label">Retiro forzoso</label>
+            <div class="col-2">
+              <input type="checkbox" style="margin-top: 15px;">
+            </div>
+            <div class="col-1">
+              <input class="res form-control" type="text" disabled id="result">
+            </div>
+          </div>
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Bono/Antiguedad/etc"
+              data-content="Aqui debe ingrear los 3 últimos bonos que recibió adicionando a su salario" class="col-1 "
+              style="color:white"><strong>?</strong></button>
+            <label for="example-text-input" class="col-2 col-form-label">Últimos bonos :</label>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 ultimos bonos" class="bonoP form-control" onkeyup="sumaBonos();"
+                placeholder="Antepenúltimo Bono" type="text">
+            </div>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 ultimos bonos" class="bonoP form-control" onkeyup="sumaBonos();"
+                placeholder="Penúltimo Bono" type="text">
+            </div>
+            <div class="col-3">
+              <input title="Aqui debe ingresar sus 3 ultimos bonos" class=" bonoP form-control" onkeyup="sumaBonos();"
+                placeholder="Último Bono" type="text">
+            </div>
+          </div>
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Buenos Promedio"
+              data-content="Ess es el promedio de los ultimos bonos que se le adicionarón " class="col-1 "
+              style="color:white"><strong>?</strong></button>
+            <label title="Promedio de los últimos 3 bonos recibidos" for="example-text-input"
+              class="col-2 col-form-label">Bonos Promedio:</label>
+            <div class="col-3">
+              <input placeholder="Promedio Bonos" title="Promedio de los últimos 3 bonos recibidos" id="bonoS"
+                class="bonoA form-control" type="text" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <button type="button" class="btn btn-sm bg-dark" data-toggle="popover" title="Vacación "
+              data-content="Aqui debe ingresar los días de vacación que debe su empresa" class="col-1 "
+              style="color:white"><strong>?</strong></button>
+            <label for="example-text-input" class="col-2 col-form-label">Días de vacación </label>
+            <div class="col-3">
+              <input placeholder="Vacación que no tomó" title="Dias de Vacación que aún no tomó"
+                class="diaV form-control" onkeyup="total();" type="text">
+            </div>
+            <div class="col-3">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+
+            <strong><span class="col-2 col-form-label"> Total Finiquito : </span> </strong>
+
+            <div class="col-2">
+              <strong><span id="finiquito"></span> (Bs.)</strong>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary bg-dark btn-block" data-toggle="modal"
+                data-target="#exampleModal" data-whatever="@mdo" onclick="showDate()">Detalle finiquito</button>
+            </div>
+            <div class="col-2">
+              <button type="button" class="btn btn-primary bg-dark btn-block" data-toggle="modal"
+                data-target="#exampleModal" data-whatever="@mdo" onclick="showDate()">Limpiar campos</button>
+            </div>
+          </div>
+          <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+
+            <strong><span class="col-3 col-form-label"> Sueldo por año: </span> </strong>
+            <div class="col-3">
+              <strong><span id="sueldoanio"></span> (Bs.)</strong>
+            </div>
+          </div>
+          <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+
+            <strong><span class="col-3 col-form-label"> Sueldo por mes : </span> </strong>
+            <!-- </div> -->
+            <div class="col-3">
+              <strong><span id="sueldomes"></span> (Bs.)</strong>
+            </div>
+          </div>
+          <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+            <!-- <div class="col-3"> -->
+            <strong><span class="col-3 col-form-label"> Sueldo por Día : </span> </strong>
+            <!-- </div> -->
+            <div class="col-3">
+              <strong><span id="sueldodia"></span> (Bs.)</strong>
+            </div>
+          </div>
+          <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+            <!-- <div class="col-3"> -->
+            <strong><span class="col-3 col-form-label"> Sueldo vacación : </span> </strong>
+            <!-- </div> -->
+            <div class="col-3">
+              <strong><span id="sueldovaca"></span> (Bs.)</strong>
+            </div>
+          </div>
+          <div class="form-group row" style="display: none">
+            <label for="example-text-input" class="col-3 col-form-label"></label>
+            <!-- <div class="col-3"> -->
+            <strong><span class="col-3 col-form-label"> Duodécimas Finiquito : </span> </strong>
+            <!-- </div> -->
+            <div class="col-3">
+              <strong><span id="duodecimas"></span> (Bs.)</strong>
+            </div>
+          </div>
+          <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" style="color:black">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Finquito Express</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="row">
+                    <div class="col-md-3 ml-auto"> </span></div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+                  <strong>Sueldo por año trabajado:</strong>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto"> <span id="anioModal"></span>
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+
+                  <strong>Sueldo por mes trabajado:</strong>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto">
+                      <span id="mesModal"></span>
+
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+
+                  <strong>Sueldo por dia trabajado:</strong>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto">
+                      <span id="diaModal"></span>
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+
+                  <strong>Aguinaldo duodecimas :</strong>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto">
+                      <span id="duoModal"></span>
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+
+                  <strong>Sueldo por Vacación :</strong>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto">
+                      <span id="vacaModal"></span>
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+                  <hr>
+                  <h5><strong>Total :</strong> </h5>
+                  <div class="row">
+                    <div class="col-md-3 ml-auto">
+                      <span id="totalModal"></span>
+                    </div>
+                    <div class="col-md-2 ml-auto"></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="mycheck">
+            <label class="custom-control-label" for="mycheck">Toggle this switch element</label>
+          </div> -->
+
+          <!-- <div class="res" id="result" style="background: yellow;"></div> -->
+          <!-- <p><input type="checkbox"> Check or uncheck the checkbox to get the status.</p>
+          <div id="result2" style="background: yellow;"></div> -->
+          <!-- <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+            <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+          </div> -->
+          <!-- MODAL -->
+          <!-- <p>
+            {{vm.result.years}}
+            {{vm.result.months}}
+            {{vm.result.days}}
+          </p> -->
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+  <!-- Section Scripts  -->
+  <footer id="footer">
+    <div class="container">
+      <a><img src="assets/img/marca.png" alt="" class="img-fluid" width="40%" height="40%"></a>
+      <p>Encuentranos tambien en nuestras redes sociales</p>
+      <div class="social-links">
+        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+        <a href="https://www.facebook.com/dandelionbc/" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/dandelion.business.clinic/" class="instagram"><i
+            class="bx bxl-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://wa.link/vm0fsf" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a> -->
+  <!-- Vendor JS Files -->
+
+  <!-- Angular  -->
+  <script data-require="angular.js@1.5.0" data-semver="1.5.0"
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  <script data-require="moment.js@2.10.2" data-semver="2.10.2"
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+  <!-- end Angular -->
+  <!-- <script>
+    $(document).ready(function () {
+      $("#datepicker").datepicker({
+        dateFormat: 'dd/mm/yy',
+      }).datepicker("setDate", new Date());
+    });
+  </script> -->
+  <script>
+    function showDate() {
+      // año
+      document.getElementById('anioModal').innerHTML = document.getElementById('sueldoanio').innerHTML;
+      document.getElementById('mesModal').innerHTML = document.getElementById('sueldomes').innerHTML;
+      //mes
+      document.getElementById('diaModal').innerHTML = document.getElementById('sueldodia').innerHTML;
+      //dia
+      document.getElementById('vacaModal').innerHTML = document.getElementById('sueldovaca').innerHTML;
+      //vaca
+      document.getElementById('duoModal').innerHTML = document.getElementById('duodecimas').innerHTML;
+      //vaca
+
+      //total
+      document.getElementById('totalModal').innerHTML = document.getElementById('finiquito').innerHTML;
+    }
+
+  </script>
+  <script>
+    angular.module('dateDiff', []);
+    angular.module('dateDiff').value('moment', moment);
+    angular.module('dateDiff').controller("index", index);
+    index.$inject = ['moment'];
+    function total() {
+      var total = 0;
+      var tot1 = 0;
+      var tot2 = 0;
+      var tot3 = 0;
+      var promM = 0;
+      var promA = 0;
+      var promD = 0;
+      var promV = 0;
+      var sueldo = 0;
+      var totalV = 0;
+      var duo = 0;
+      var duodecimas = 0;
+      var bonos = 0;
+      var desa = 0;
+
+      $(".anioF").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          tot1 += 0;
+        } else {
+          tot1 += parseFloat($(this).val());
+        }
+      });
+      $(".mesF").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          tot2 += 0;
+        } else {
+          tot2 += parseFloat($(this).val());
+        }
+      });
+
+      $(".dayF").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          tot3 += 0;
+        } else {
+          tot3 += parseFloat($(this).val());
+        }
+      });
+
+      $("#spTotal").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          sueldo += 0;
+        } else {
+          sueldo += parseFloat($(this).val());
+        }
+      });
+      $(".diaV").each(function () {
+        if (isNaN(parseFloat($(this).val()))) {
+
+          totalV += 0;
+        } else {
+          totalV += parseFloat($(this).val());
+        }
+      });
+      $(".bonoA").each(function () {
+        if (isNaN(parseFloat($(this).val()))) {
+
+          bonos += 0;
+        } else {
+          bonos += parseFloat($(this).val());
+        }
+      });
+      $(".res").each(function () {
+        if (isNaN(parseFloat($(this).val()))) {
+
+          desa += 0;
+        } else {
+          desa += parseFloat($(this).val());
+        }
+      });
+      console.log("Desahucio", desa);
+      var totalSueldo; 
+      totalSueldo = sueldo +bonos;
+      promA = totalSueldo * tot1;//Anio
+      promM = totalSueldo / 12;//Mes
+      promD = promM / 30;//Dia
+      //promV = promM / 30;//Vacacion
+      var sVacacion = 0;
+      var diaDuo = 0;
+      var totalduo = 0;
+      var sMes = 0;
+      var sDia = 0;
+      var date = new Date($('#fechaF').val());
+      var mesDuo = date.getMonth();
+      var diaDuodd = date.getDate() + 1;
+      var duoDiaDuo = 0;
+      sMes = promM * tot2;
+      sDia = promD * tot3;
+      console.log('Mes para duodecimas'+mesDuo)
+      if (mesDuo > 3) {
+        duo = (totalSueldo / 12) * mesDuo;
+        diaDuo = promD * diaDuodd;
+        duodecimas = duo + diaDuo;
+      }
+      else {
+        duodecimas = 0;
+      }
+      //vacacion
+      sVacacion = (totalSueldo / 30) * totalV;
+      console.log('sueldo por anio:', promA);
+      console.log('sueldo por mes :', sMes);
+      console.log('sueldo por dia :', sDia);
+      console.log('sueldo por vacacion :', sVacacion);
+      console.log('sueldo por duodecimas :', duodecimas);
+      console.log("Desahucio", desa);
+      total = promA + sDia + sVacacion + sMes + duodecimas  + desa;
+      console.log('Finiquito :', total);
+      document.getElementById('finiquito').innerHTML = total;
+      document.getElementById('sueldoanio').innerHTML = promA;//sueldo por anio
+      document.getElementById('sueldomes').innerHTML = sMes;//sueldo por mes 
+      document.getElementById('sueldodia').innerHTML = sDia;//sueldo por dia 
+      document.getElementById('sueldovaca').innerHTML = sVacacion;//sueldo por vacacion
+      document.getElementById('duodecimas').innerHTML = duodecimas;//Duodecimas
+
+    }
+    function sumaBonos() {
+      var totalBono = 0;
+      var prome = 0;
+      $(".bonoP").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          totalBono += 0;
+        } else {
+          totalBono += parseFloat($(this).val());
+          prome = totalBono / 3;
+        }
+      });
+      document.getElementById('bonoS').value = prome;
+    }
+    function sumar() {
+      var total = 0;
+      var prome = 0;
+      var anio = 0;
+      var dVacacion = 0;
+      $(".monto").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          total += 0;
+        } else {
+          total += parseFloat($(this).val());
+          prome = total / 3;
+        }
+      });
+      $(".anioF").each(function () {
+
+        if (isNaN(parseFloat($(this).val()))) {
+
+          anio += 0;
+        } else {
+          anio += parseFloat($(this).val());
+
+        }
+      });
+      if (anio >= 1 && anio <= 4) {
+        dVacacion = 15;
+
+      }
+      if (anio >= 5 && anio <= 9) {
+        dVacacion = 20;
+
+      }
+      if (anio >= 10) {
+        dVacacion = 30;
+      }
+      //RENUNCIA 
+      $(document).ready(function () {
+        $('input[type="checkbox"]').click(function () {
+          if ($(this).prop("checked") == true) {
+            // $("#result").html("Checkbox is checked.");
+            //$("#result").html("Checkbox is checked.").val()=30;
+            document.getElementById('result').value = prome * 3;
+          }
+          else if ($(this).prop("checked") == false) {
+            //$("#result").html("Checkbox is unchecked.");
+            document.getElementById('result').value = 0;
+            // prome = 100;
+          }
+        });
+      });
+      document.getElementById('spTotal').value = prome;
+      document.getElementById('dVaca').innerHTML = dVacacion;
+      // $("#fechaF").datepicker().on('changeMonth', function (e) {
+      //   var currMonth = new Date(e.date).getMonth() + 1;
+      // });
+    }
+    function index(moment) {
+      var vm = {
+        startDate: undefined,
+        endDate: undefined,
+        result: {},
+        getDiff: getDiff
+      }
+      init();
+      return vm;
+
+      function init() { }
+
+      function getDiff() {
+        var diff = dateDiff(vm.startDate, vm.endDate);
+
+        if (diff !== undefined) {
+          angular.extend(vm.result, diff)
+        }
+        else {
+          alert('invalid start or end date');
+        }
+      }
+      function dateDiff(startdate, enddate) {
+        //define moments for the startdate and enddate
+        var startdateMoment = moment(startdate);
+        var enddateMoment = moment(enddate);
+
+        if (startdateMoment.isValid() === true && enddateMoment.isValid() === true) {
+          //getting the difference in years
+          var years = enddateMoment.diff(startdateMoment, 'years');
+
+          //moment returns the total months between the two dates, subtracting the years
+          var months = enddateMoment.diff(startdateMoment, 'months') - (years * 12);
+
+          //to calculate the days, first get the previous month and then subtract it
+          startdateMoment.add(years, 'years').add(months, 'months');
+          var days = enddateMoment.diff(startdateMoment, 'days');
+          return {
+            years: years,
+            months: months,
+            days: days + 1
+          };
+        }
+        else {
+          return undefined;
+        }
+      }
+    }
+  </script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <script src="assets/js/main.js"></script>
+
+  <!-- End Section Scripts -->
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>jQuery Get the Value of an Input Text Box</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <input type="s" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+    <input type="s" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label><br>
+
+    <script>
+        $(document).ready(function () {
+            $('input[type="checkbox"]').click(function () {
+                if ($(this).prop("checked") == true) {
+                    console.log("Checkbox is checked.");
+                }
+                else if ($(this).prop("checked") == false) {
+                    console.log("Checkbox is unchecked.");
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Get value on button click and show alert
+            $("#myBtn").click(function () {
+                var sum1 = $("#sum1").val();
+                var sum2 = $("#sum2").val();
+                var sum3 = $("#sum3").val();
+                var total;
+                if (isNaN(parseFloat($(this).val()))) {
+
+                    total += 0;
+                } else {
+                    total += parseFloat($(this).val());
+                    prome = total / 3;
+                }
+            });
+        });
+        //Get
+        var bla = $('#txt_name').val();
+
+        //Set
+        $('#txt_name').val(bla);
+    </script>
+
+</head>
+
+<body>
+    <input type="text" id="sum1">
+    <input type="text" id="sum2">
+    <input type="text" id="sum3">
+
+    <input type="text" id="myInput">
+    <button type="button" id="myBtn">Show Value</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd/mm/yy',
+            }).datepicker("setDate", new Date());
+        });
+
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <input type="text" id="datepicker">
+</body>
+
+</html>
