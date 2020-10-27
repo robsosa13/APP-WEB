@@ -147,16 +147,20 @@ text-align: justify;
   margin: 0;
   padding: 0;
   list-style: none;
+ 
 }
 
 .nav-menu > ul {
   display: flex;
+
 }
 
 .nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
   margin: 0 12px;
+ 
+
 }
 
 .nav-menu a {
@@ -168,6 +172,9 @@ text-align: justify;
   padding: 25px 3px;
   font-weight: 0;
   font-family: mifuente;
+  
+ 
+   
 }
 
 .nav-menu > ul > li > a:before {
@@ -181,15 +188,20 @@ text-align: justify;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
+  opacity:.5;
 }
 
 .nav-menu a:hover:before, .nav-menu li:hover > a:before, .nav-menu .active > a:before {
   visibility: visible;
   width: 100%;
+  color:violet;
+  opacity:.5;
+  
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   color: #fff;
+  
 }
 
 .nav-menu .drop-down ul {
@@ -208,14 +220,16 @@ text-align: justify;
 }
 
 .nav-menu .drop-down:hover > ul {
-  opacity: 1;
+  opacity: 0.5;
   top: 100%;
   visibility: visible;
+ 
 }
 
 .nav-menu .drop-down li {
   min-width: 180px;
   position: relative;
+   color: white;
 }
 
 .nav-menu .drop-down ul a {
@@ -224,16 +238,20 @@ text-align: justify;
   font-weight: 500;
   text-transform: none;
   color: #282828;
+  
+
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
   color: #999999;
+  
 }
 
 .nav-menu .drop-down > a:after {
   content: "\ea99";
   font-family: IcoFont;
   padding-left: 5px;
+  
 }
 
 .nav-menu .drop-down .drop-down ul {
@@ -249,6 +267,7 @@ text-align: justify;
 
 .nav-menu .drop-down .drop-down > a {
   padding-right: 35px;
+  color: black;
 }
 
 .nav-menu .drop-down .drop-down > a:after {
@@ -256,6 +275,7 @@ text-align: justify;
   font-family: IcoFont;
   position: absolute;
   right: 15px;
+  color: black;
 }
 
 @media (max-width: 1366px) {
